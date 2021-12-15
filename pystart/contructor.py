@@ -6,7 +6,7 @@ _T = Any
 class A:
     def __new__(cls: Type[_T], a: Any) -> _T:
         print(f"this is __new__{a}\n")
-        return object.__new__(cls)
+        return object.__new__(cls)  # type: ignore
         # return cls.__init__(,a)
         # return cls(a)
 
