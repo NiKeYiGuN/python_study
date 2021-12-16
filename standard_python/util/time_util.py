@@ -12,3 +12,10 @@ def timer(fn: Callable[..., Any]) -> Callable[..., Any]:
         return result
 
     return wrapper
+
+
+def format_time():
+    return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+
+
+__all__ = ["timer", "format_time"]  # type: ignore
