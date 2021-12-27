@@ -1,7 +1,8 @@
 # type: ignore
 import threading
 import numpy as np
-from standard_python.util.time_util import *
+
+from util.time_util import format_time
 
 
 def task_1(n_max, some_threshold, nx, ny, n):

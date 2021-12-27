@@ -1,6 +1,6 @@
 import threading
 from threading import Lock, RLock
-from standard_python.util.time_util import format_time
+from util.time_util import format_time
 
 """
     多线程共享全局变量
