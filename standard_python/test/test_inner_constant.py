@@ -10,9 +10,6 @@ class TestInnerConstant:
     def test_none(self):
         assert not None
 
-    def test_notimplemented(self):
-        assert NotImplemented
-
     def test_ellipsis(self):
         assert type(...) == type(Ellipsis)
 
