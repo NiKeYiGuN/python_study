@@ -1,14 +1,18 @@
 from typing import Any, Callable
 from functools import wraps
 import time
+import datetime
 
 
 def timer(fn: Callable[..., Any]) -> Callable[..., Any]:
-    @wraps
-    def wrapper(*args: Any, **kargs: Any) -> Any:
-        print(f"开始执行{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}")
-        result = fn(args, kargs)
-        print(f"执行完毕{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}")
+    @wraps(fn)
+    def wrapper(*args: Any, **kwargs: Any) -> Any:
+        start_time = datetime.datetime.now()
+        print(f"start:{start_time}")
+        result = fn(*args, **kwargs)
+        ent_time = datetime.datetime.now()
+        print(f"end:{ent_time}")
+        print(fn.__name__, "execute time:", f"{ent_time-start_time}")
         return result
 
     return wrapper
