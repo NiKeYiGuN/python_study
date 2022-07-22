@@ -12,9 +12,9 @@ from util.time_util import timer
 
 
 @timer
-def longest_non_repeat_v1(string: str) -> int:
+def longest_non_repeat_v1(string: str) -> None:
     """
-    暴力法
+    Violent method
     """
     max_sub_len = 0
 
