@@ -4,7 +4,9 @@ import string
 from algorithms.array.delete_nth import delete_nth_native, delete_nth
 from algorithms.array.flatten import flatten, flatten_iter
 from algorithms.array.josephus import josephus, josephus_yield
-from algorithms.array.longest_non_repeat import longest_non_repeat_v1, longest_non_repeat_v2, longest_non_repeat_v3, longest_non_repeat_v4
+from algorithms.array.longest_non_repeat import longest_non_repeat_v1, longest_non_repeat_v2, longest_non_repeat_v3, \
+    longest_non_repeat_v4
+from algorithms.array.max_ones_index import get_max_ones_index
 
 
 def test_delete_nth_navite():
@@ -43,3 +45,8 @@ def test_longest_non_repeat():
 
     assert longest_non_repeat_v1(chars) == longest_non_repeat_v2(chars)
     assert longest_non_repeat_v3(chars) == longest_non_repeat_v4(chars)
+
+
+def test_max_ones_index():
+    test_array = [1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1]
+    assert get_max_ones_index(test_array) == 9
